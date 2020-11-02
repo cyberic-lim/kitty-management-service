@@ -23,3 +23,7 @@ jobs:
       run: dotnet build './KittyManagementService/' --configuration Release --no-restore
     - name: Test
       run: dotnet test './KittyManagementService/' --no-restore --verbosity normal
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        path: './KittyManagementService/KittyManagementService/bin/Release/netcoreapp3.1/*'
