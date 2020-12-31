@@ -7,23 +7,22 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  build-artifacts:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout Repository
+      uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
-    - name: Install dependencies
+    - name: Install Dependencies
       run: dotnet restore './KittyManagementService/'
-    - name: Build
+    - name: Build Application
       run: dotnet build './KittyManagementService/' --configuration Release --no-restore
-    - name: Test
+    - name: Test Application
       run: dotnet test './KittyManagementService/' --no-restore --verbosity normal
-    - name: Archive artifacts
+    - name: Archive Artifacts
       uses: actions/upload-artifact@v2
       with:
         path: './KittyManagementService/KittyManagementService/bin/Release/netcoreapp3.1/*'
@@ -32,3 +31,5 @@ jobs:
       with:
         image: docker.io/cyberic/kms
         tag: 1.0.0
+        dockerfiles: |
+          ../../KittyManagementService/KittyManagementService/Dockerfile
