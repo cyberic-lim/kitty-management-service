@@ -26,10 +26,3 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         path: './KittyManagementService/KittyManagementService/bin/Release/netcoreapp3.1/*'
-    - name: Buildah Action
-      uses: redhat-actions/buildah-build@v1
-      with:
-        image: docker.io/cyberic/kms
-        tag: 1.0.0
-        dockerfiles: |
-          ./KittyManagementService/KittyManagementService/Dockerfile
