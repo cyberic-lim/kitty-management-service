@@ -22,6 +22,12 @@ jobs:
       run: dotnet build './KittyManagementService/' --configuration Release --no-restore
     - name: Test Application
       run: dotnet test './KittyManagementService/' --no-restore --verbosity normal
+    - name: Coverlet SAST
+      uses: b3b00/coverlet-action@1.0.96
+      with:
+        testProject: './KittyManagementService/KittyManagementService.csproj'
+        output: 'json.info'
+        exclude: '[program]*,[test]test.*'        
     - name: Archive Artifacts
       uses: actions/upload-artifact@v2
       with:
