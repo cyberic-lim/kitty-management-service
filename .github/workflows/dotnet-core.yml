@@ -17,11 +17,11 @@ jobs:
       with:
         dotnet-version: 3.1.301
     - name: Install Dependencies
-      run: dotnet restore './KittyManagementService/'
+      run: dotnet restore './KittyManagementService/KittyManagementService/'
     - name: Build Application
-      run: dotnet build './KittyManagementService/' --configuration Release --no-restore
+      run: dotnet build './KittyManagementService/KittyManagementService/' --configuration Release --no-restore
     - name: Test Application
-      run: dotnet test './KittyManagementService/' --no-restore --verbosity normal
+      run: dotnet test './KittyManagementService/KittyManagementService/' --no-restore --verbosity normal
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v1
     - name: Set up Docker Buildx
