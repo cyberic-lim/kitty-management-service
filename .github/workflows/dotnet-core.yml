@@ -23,9 +23,9 @@ jobs:
     - name: Test Application
       run: dotnet test './KittyManagementService/' --no-restore --verbosity normal
     - name: Install snapd 
-      run:  apt install snapd -y
+      run:  sudo -S apt install snapd -y
     - name: Install docker 
-      run: snap install docker
+      run: sudo -S snap install docker
     - name: sleep to wait for docker to finsh init 
       run: sleep 15
     - name: Docker build
