@@ -22,6 +22,12 @@ jobs:
       run: dotnet build './KittyManagementService/' --configuration Release --no-restore
     - name: Test Application
       run: dotnet test './KittyManagementService/' --no-restore --verbosity normal
+    - name: Install snapd 
+      run:  apt install snapd -y
+    - name: Install docker 
+      run: snap install docker
+    - name: sleep to wait for docker to finsh init 
+      run: sleep 15
     - name: Docker build
       run: docker build -t KMS:1.0 './KittyManagementService/KittyManagementService/'
     - name: Archive Artifacts
