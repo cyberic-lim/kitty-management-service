@@ -14,7 +14,7 @@ namespace KittyManagementService.Controllers
         [HttpGet()]
         public KittenDto GetKittens()
         {
-            KittenDto kittenDto = new KittenDto { KittenId = 1, Name = "Manga" };
+            KittenDto kittenDto = new KittenDto { KittenId = 1, Name = "Mango" };
 
             return kittenDto;
         }
