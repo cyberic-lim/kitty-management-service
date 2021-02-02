@@ -26,3 +26,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         path: './KittyManagementService/KittyManagementService/bin/Release/netcoreapp3.1/*'
+    - name: Install snapd 
+      run:  sudo -S apt install snapd -y
+    - name: Install docker 
+      run: sudo -S snap install docker
