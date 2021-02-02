@@ -1,11 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
-WORKDIR /src
-COPY /KittyManagementService/KittyManagementService/KittyManagementService.csproj .
-RUN dotnet restore
-COPY . .
-RUN dotnet publish -c release -o /app
-
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 WORKDIR /app
-COPY --from=build /app .
+COPY /home/github/_work/kitty-management-service/kitty-management-service/KittyManagementService/KittyManagementService/bin/Release/netcoreapp3.1 .
 ENTRYPOINT ["dotnet", "KittyManagementService.dll"]
