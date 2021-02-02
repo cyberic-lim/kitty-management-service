@@ -19,7 +19,7 @@ jobs:
     - name: Install Dependencies
       run: dotnet restore './KittyManagementService/'
     - name: Install Docker 
-      run: sudo apt install docker
+      run: sudo apt install docker -y
     - name: Build Application
       run: dotnet build './KittyManagementService/' --configuration Release --no-restore
     - name: Test Application
