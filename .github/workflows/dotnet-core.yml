@@ -19,17 +19,9 @@ jobs:
     - name: Install Dependencies
       run: dotnet restore './KittyManagementService/'
     - name: Build Application
-      run: dotnet build './KittyManagementService/' --configuration Release --no-restore
+      run: dotnet build './KittyManagementService/' --configuration Release --no-restore --output ./KittyManagementService/KittyManagementServiceOutput
     - name: Test Application
-      run: dotnet test './KittyManagementService/' --no-restore --verbosity normal
-    - name: Install snapd 
-      run:  sudo -S apt install snapd -y
-    - name: Install docker 
-      run: sudo -S snap install docker
-    - name: sleep to wait for docker to finsh init 
-      run: sleep 15
-    - name: Docker build
-      run: docker build -t KMS:1.0 './KittyManagementService/KittyManagementService/'
+      run: dotnet test './KittyManagementService/' --verbosity minimal --no-restore
     - name: Archive Artifacts
       uses: actions/upload-artifact@v2
       with:
