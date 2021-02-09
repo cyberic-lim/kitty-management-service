@@ -39,7 +39,6 @@ jobs:
       id: docker_build
       uses: docker/build-push-action@v2
       with:
-        context: .
         file: ./KittyManagementService/KittyManagementService/Dockerfile
         push: true
         tags: cyberic/kms:1.0.0
