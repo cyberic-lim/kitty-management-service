@@ -29,7 +29,7 @@ jobs:
     - name: Debug Check 1    
       run: ls -l  
     - name: Debug Check 2 
-      run: cd KittyManagementService
+      run: cd KittyManagementService | ls -l
     - name: Debug Check 3    
       run: ls -l  
     - name: Set up QEMU
