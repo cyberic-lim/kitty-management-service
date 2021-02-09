@@ -35,6 +35,8 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Debug Point
+      run: echo ${{ runner.temp }}
     - name: Build and push
       id: docker_build
       uses: docker/build-push-action@v2
