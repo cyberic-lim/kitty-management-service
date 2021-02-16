@@ -26,6 +26,8 @@ jobs:
       uses: b3b00/coverlet-action@1.1.0
       with:
         testProject: './KittyManagementService/KittyManagementServiceTest/KittyManagementServiceTest.csproj'
+        output: 'lcov.info'
+        outputFormat: 'lcov'
         excludes: '[program]*,[test]test.*'      
     - name: Archive Artifacts
       uses: actions/upload-artifact@v2
