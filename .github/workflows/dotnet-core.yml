@@ -22,7 +22,7 @@ jobs:
       run: dotnet build './KittyManagementService/' --configuration Release --no-restore
     - name: Test Application
       run: dotnet test './KittyManagementService/' --verbosity minimal --no-restore
-    - name: Perform SAST
+    - name: Perform Code Coverage
       uses: b3b00/coverlet-action@1.1.0
       with:
         testProject: './KittyManagementService/KittyManagementServiceTest/KittyManagementServiceTest.csproj'
