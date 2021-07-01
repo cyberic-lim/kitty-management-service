@@ -21,5 +21,13 @@ namespace KittyManagementService.Controllers
 
             return kittenDto;
         }
+
+        [HttpPost]
+        async Task<ActionResult<KittenDto>> CreateEmployee(KittenForCreationDto kittenForCreationDto)
+        {
+            List<KittenDto> kittenDtos = new List<KittenDto>();
+
+            return Ok(kittenDtos);
+        }
     }
 }
