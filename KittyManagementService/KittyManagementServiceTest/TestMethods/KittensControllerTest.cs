@@ -20,7 +20,7 @@ namespace KittyManagementServiceTest.TestMethods
         {
             KittensController kittensController = new KittensController();
             KittenDto kittenDto = kittensController.GetKittens();
-            Assert.IsTrue(kittenDto.Name == "Apple");
+            Assert.IsTrue(kittenDto.Name == "Mango");
         }
 
     }
