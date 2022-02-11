@@ -15,7 +15,7 @@ namespace KittyManagementService.Controllers
         public KittenDto GetKittens()
         {
             // Create kittens
-            KittenDto kittenDto = new KittenDto { KittenId = 2, Name = "Apple" };
+            KittenDto kittenDto = new KittenDto { KittenId = 2, Name = "Mango" };
 
             // TODO: Return array of kittens
 
